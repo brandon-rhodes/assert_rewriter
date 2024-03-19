@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+cd "$(readlink -f $(dirname "${BASH_SOURCE[0]}"))"
+cd ..
+python -m doctest -o ELLIPSIS README.rst
