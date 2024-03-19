@@ -6,7 +6,7 @@
 import linecache
 import sys
 import unittest
-from . import rewrite_asserts_in
+from . import rewrite_function
 from . import samples
 
 class AssertTests(unittest.TestCase):
@@ -15,7 +15,7 @@ class AssertTests(unittest.TestCase):
 
     def execute(self, test):
         """Rewrite the asserts in ``test()``; run it; return exception data."""
-        rewrite_asserts_in(test)
+        rewrite_function(test)
         try:
             test()
         except AssertionError as e:
